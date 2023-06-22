@@ -35,12 +35,22 @@ class IndexedPost(PostCreate):
     url_scheme: str
     user_agent: str
 
+    def __eq__(self, other):
+        return self.id == other.id
+
+    def __lt__(self, other):
+        return self.created_at > other.created_at
+
 
 class PostSearch(BaseModel):
     title: str | None
     author: str | None
-    size: int = 50
+    count: int = 50
 
 
-class PostSearchOut(PostCreate):
+class PostSearchOut(BaseModel):
     id: POST_ID
+    title: str
+    author: str
+    text: str
+    created_at: datetime
