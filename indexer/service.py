@@ -7,9 +7,9 @@ def create_post(post: schemas.PostCreate):
     index.index_post(structured_post)
 
 
-def search_post(search_params: schemas.PostSearch) -> schemas.PostSearchOut:
-    return []
+def search_post(search_params: schemas.PostSearch) -> list[schemas.IndexedPost]:
+    return index.search_posts(params=search_params)
 
 
-def get_post_by_id(post_id: schemas.POST_ID):
-    ...
+def get_post_by_id(post_id: schemas.POST_ID) -> schemas.IndexedPost | None:
+    return index.post_retrieve(post_id=post_id)
