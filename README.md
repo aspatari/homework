@@ -1,6 +1,6 @@
 # FastAPI Backend Application
 
-This is a backend application built with FastAPI that provides endpoints for submitting and searching submissions. The application allows indexing and searching of submissions in memory without using a database.
+This is a backend application built with FastAPI that provides endpoints for submitting and searching posts. The application allows indexing and searching of posts in memory without using a database.
 
 ## Endpoints
 
