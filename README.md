@@ -27,11 +27,12 @@ To run the FastAPI application using Docker, follow these steps:
 3. Run generator for submission
    
    ```bash
-  ./generator -submit-url=http://localhost:8000/api/v1/posts
+    ./generator -submit-url=http://localhost:8000/api/v1/posts
    ```
+
  
 4. Run generator for search
    
    ```bash
-  ./generator -search-url=http://localhost:8000/api/v1/posts
+    ./generator -search-url=http://localhost:8000/api/v1/posts
    ```
