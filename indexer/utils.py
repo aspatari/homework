@@ -1,5 +1,5 @@
 from indexer import schemas
-from datetime import datetime
+from datetime import datetime, timezone
 from hashlib import md5
 from indexer.schemas import IndexedPost
 
@@ -14,7 +14,7 @@ def count_words(input_str: str) -> int:
 
 def post_to_indexed_post(post: schemas.PostCreate) -> schemas.IndexedPost:
     indexed_post = IndexedPost(
-        created_at=datetime.now(),
+        created_at=datetime.now(timezone.utc),
         title_md5=string_to_md5(post.title),
         text_md5=string_to_md5(post.text),
         title_len_ch=len(post.title),
